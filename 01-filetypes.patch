@@ -1,0 +1,11 @@
+--- origsrc/highlight-3.12/filetypes.conf	2012-08-21 16:07:51.000000000 -0500
++++ src/highlight-3.12/filetypes.conf	2012-11-07 16:47:51.695032700 -0600
+@@ -40,7 +40,7 @@ FileMapping = {
+  { Lang="progress", Extensions={"p", "i", "w"} },
+  { Lang="ruby", Extensions={"rb","ruby", "pp", "rjs"} },
+  { Lang="rexx", Extensions={"rex", "rx", "the"} },
+- { Lang="sh", Extensions={"bash", "ebuild", "eclass"} },
++ { Lang="sh", Extensions={"bash", "ebuild", "eclass", "cygport", "cygpart", "cygclass"} },
+  { Lang="smalltalk", Extensions={"st", "gst", "sq"} },
+  { Lang="sybase", Extensions={"sp"} },
+  { Lang="tcl", Extensions={"wish", "itcl"} },

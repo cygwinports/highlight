@@ -1,0 +1,35 @@
+inherit qt4
+
+NAME="highlight"
+VERSION=3.12
+RELEASE=1
+CATEGORY="Text"
+SUMMARY="Source code syntax highlighter"
+DESCRIPTION="Highlight converts sourcecode to HTML, XHTML, RTF, LaTeX, TeX,
+SVG, BBCode and terminal escape sequences with coloured syntax highlighting.
+Language definitions and colour themes are customizable."
+HOMEPAGE="http://www.andre-simon.de/"
+SRC_URI="mirror://sourceforge/syntaxhighlight/${P}.tar.bz2"
+PATCH_URI="01-filetypes.patch"
+
+PKG_NAMES="highlight highlight-common highlight-gui"
+highlight_REQUIRES="highlight-common"
+highlight_CONTENTS="usr/bin/highlight.exe usr/share/man/"
+highlight_common_SUMMARY="${SUMMARY} (data)"
+highlight_common_CONTENTS="--exclude=gui_files etc/ usr/share/doc/ usr/share/highlight/"
+highlight_gui_SUMMARY="${SUMMARY} (Qt4 GUI)"
+highlight_gui_REQUIRES="highlight-common"
+highlight_gui_CONTENTS="usr/bin/highlight-gui.exe usr/share/applications/
+			usr/share/highlight/gui_files/ usr/share/pixmaps/"
+
+src_compile() {
+	lndirs
+	cd ${B}
+	cygmake all gui QMAKE=${QT4_QMAKE}
+}
+
+src_install() {
+	cd ${B}
+	cyginstall install-gui -j1
+	make_etc_defaults /etc/highlight
+}
