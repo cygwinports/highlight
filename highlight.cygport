@@ -11,7 +11,8 @@ Language definitions and colour themes are customizable."
 HOMEPAGE="http://www.andre-simon.de/"
 SRC_URI="mirror://sourceforge/syntaxhighlight/${P}.tar.bz2"
 PATCH_URI="01-filetypes.patch"
-PATCH_URI+=" 02-lua51.patch"
+# these have different line endings
+PATCH_URI+=" 02-lua51.patch 03-gui-lua51.patch"
 
 PKG_NAMES="highlight highlight-common highlight-gui"
 highlight_REQUIRES="highlight-common"
