@@ -1,0 +1,26 @@
+--- origsrc/highlight-3.13/src/gui-qt/highlight.pro	2013-01-18 16:43:59.000000000 -0600
++++ src/highlight-3.13/src/gui-qt/highlight.pro	2013-05-27 23:37:00.715290800 -0500
+@@ -33,7 +33,7 @@ unix:LIBS += -L.. -lhighlight
+ unix {
+     LIBS += -llua5.1
+     CONFIG += link_pkgconfig
+-    PKGCONFIG += lua5.1
++    PKGCONFIG += lua
+ }
+ 
+ win32:QMAKE_POST_LINK = f:/upx/upx.exe --best ../../highlight-gui.exe
+--- origsrc/highlight-3.13/src/makefile	2013-02-01 14:37:56.000000000 -0600
++++ src/highlight-3.13/src/makefile	2013-05-27 23:38:14.240496200 -0500
+@@ -34,10 +34,10 @@ INCLUDE_DIR=./include/
+ 
+ 
+ # If Lua 5.2 is not default on your system yet you have to omit 5.1:
+-LUA_CFLAGS=$(shell pkg-config --cflags lua5.1)
++LUA_CFLAGS=$(shell pkg-config --cflags lua)
+ 
+ # default lua lib
+-LUA_LIBS=$(shell pkg-config --libs lua5.1)
++LUA_LIBS=$(shell pkg-config --libs lua)
+ # luajit lib
+ #LUA_LIBS=$(shell pkg-config --libs luajit)
+ 
