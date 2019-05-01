@@ -1,0 +1,15 @@
+--- origsrc/highlight-3.50/src/makefile	2019-03-26 15:58:45.000000000 -0400
++++ src/highlight-3.50/src/makefile	2019-05-01 14:02:35.207845700 -0400
+@@ -18,9 +18,9 @@ CXX=g++
+ # was: qmake-qt5
+ QMAKE=qmake
+ 
+-# Added -std=c++11 because of auto_ptr to unique_ptr transition
+-CFLAGS:=-Wall -O2 ${CFLAGS} -DNDEBUG -std=c++11
+-#CFLAGS:=-ggdb ${CFLAGS} -std=c++11
++# Added -std=gnu++11 because of auto_ptr to unique_ptr transition
++CFLAGS:=-Wall -O2 ${CFLAGS} -DNDEBUG -std=gnu++11
++#CFLAGS:=-ggdb ${CFLAGS} -std=gnu++11
+ 
+ CFLAGS_DILU=-fno-strict-aliasing
+ 
